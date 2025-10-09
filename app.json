@@ -1,0 +1,122 @@
+
+{
+  "name": "Enhanced VideoCompress Bot v2.0",
+  "description": "Advanced Telegram Video Compression Bot with Enhanced Features",
+  "logo": "https://telegra.ph/file/b687febf32e4d583fb1d4.jpg",
+  "keywords": [
+    "telegram",
+    "bot",
+    "video",
+    "compress",
+    "ffmpeg",
+    "enhanced",
+    "python",
+    "pyrogram",
+    "mongodb",
+    "docker"
+  ],
+  "success_url": "https://t.me/linux_repo",
+  "website": "https://t.me/Discovery_Updates",
+  "repository": "https://github.com/enhanced/VideoCompress",
+  "env": {
+    "ENV": {
+      "description": "Set to ANYTHING to enable environment variables",
+      "value": "ANYTHING"
+    },
+    "SESSION_NAME": {
+      "description": "Session name for the bot",
+      "value": "EnhancedCompressorBot",
+      "required": true
+    },
+    "DATABASE_URL": {
+      "description": "MongoDB database URL for storing user data and statistics",
+      "value": "",
+      "required": true
+    },
+    "TG_BOT_TOKEN": {
+      "description": "Telegram Bot Token from @BotFather",
+      "value": "",
+      "required": true
+    },
+    "APP_ID": {
+      "description": "Telegram API ID from https://my.telegram.org",
+      "value": "",
+      "required": true
+    },
+    "API_HASH": {
+      "description": "Telegram API Hash from https://my.telegram.org",
+      "value": "",
+      "required": true
+    },
+    "AUTH_USERS": {
+      "description": "Space-separated list of admin user IDs",
+      "value": "",
+      "required": true
+    },
+    "BOT_USERNAME": {
+      "description": "Bot username without @ symbol",
+      "value": "",
+      "required": true
+    },
+    "LOG_CHANNEL": {
+      "description": "Log channel username or ID (with @)",
+      "value": "",
+      "required": true
+    },
+    "UPDATES_CHANNEL": {
+      "description": "Updates channel for force subscription (optional)",
+      "value": "",
+      "required": false
+    },
+    "MAX_FILE_SIZE": {
+      "description": "Maximum file size in bytes (4GB default)",
+      "value": "4294967296",
+      "required": false
+    },
+    "TG_MAX_FILE_SIZE": {
+      "description": "Telegram maximum file size in bytes (2GB default)",
+      "value": "2097152000",
+      "required": false
+    },
+    "MAX_CONCURRENT_PROCESSES": {
+      "description": "Maximum concurrent compression processes",
+      "value": "3",
+      "required": false
+    },
+    "DEFAULT_COMPRESSION": {
+      "description": "Default compression percentage (10-90)",
+      "value": "50",
+      "required": false
+    },
+    "ENABLE_QUEUE": {
+      "description": "Enable queue management system",
+      "value": "True",
+      "required": false
+    },
+    "RATE_LIMIT_MESSAGES": {
+      "description": "Rate limit: messages per time window",
+      "value": "10",
+      "required": false
+    },
+    "RATE_LIMIT_WINDOW": {
+      "description": "Rate limit time window in seconds",
+      "value": "60",
+      "required": false
+    }
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "eco"
+    }
+  },
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-python"
+    },
+    {
+      "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+    }
+  ],
+  "stack": "heroku-22"
+}
